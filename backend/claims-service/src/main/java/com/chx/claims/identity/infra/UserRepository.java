@@ -1,0 +1,1 @@
+package com.chx.claims.identity.infra; import com.chx.claims.identity.domain.User; import java.util.*; import org.springframework.data.jpa.repository.JpaRepository; public interface UserRepository extends JpaRepository<User,UUID>{Optional<User> findByEmail(String email);}

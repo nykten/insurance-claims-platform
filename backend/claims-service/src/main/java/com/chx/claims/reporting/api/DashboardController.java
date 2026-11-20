@@ -1,0 +1,2 @@
+package com.chx.claims.reporting.api; import com.chx.claims.reporting.application.DashboardService; import java.util.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/reports") public class DashboardController {private final DashboardService s; public DashboardController(DashboardService s){this.s=s;} @GetMapping("/status-summary") public Object status(){return s.status();} @GetMapping("/workload") public Object workload(){return s.workload();} @GetMapping("/exposure") public Object exposure(){return s.exposure();}}

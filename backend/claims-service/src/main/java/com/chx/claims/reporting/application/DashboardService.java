@@ -1,0 +1,2 @@
+package com.chx.claims.reporting.application; import com.chx.claims.reporting.infra.ReportingRepository; import java.util.*; import org.springframework.stereotype.Service;
+@Service public class DashboardService {private final ReportingRepository r; public DashboardService(ReportingRepository r){this.r=r;} public List<Map<String,Object>> status(){return r.statusSummary();} public List<Map<String,Object>> workload(){return r.workload();} public List<Map<String,Object>> exposure(){return r.exposure();}}

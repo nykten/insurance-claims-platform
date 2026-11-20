@@ -1,0 +1,2 @@
+package com.chx.claims.assignment.api; import com.chx.claims.assignment.application.AssignmentService; import java.util.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/officer") public class QueueController {private final AssignmentService s; public QueueController(AssignmentService s){this.s=s;} @GetMapping("/queue") public Object queue(){return s.queue();} @GetMapping("/claims/mine") public Object mine(@RequestHeader("X-User-Id") UUID id){return s.mine(id);}}

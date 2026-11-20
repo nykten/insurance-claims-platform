@@ -17,3 +17,9 @@ Milestone 2 was planned to establish the shared `common` foundation, policy vali
 ## Known follow-up work
 
 Identity/security and role enforcement remain Milestone 3 work. Outbox recording is intentionally not wired yet because it belongs to Milestone 4. The current controllers use a temporary `X-User-Id` header until JWT authentication is implemented. Full Maven verification remains pending an environment with JDK 21 and Maven.
+
+## Milestone 3 changes
+
+- Added bearer authentication filtering and current-user access support.
+- Added performance/SLA reporting through a read-only JDBC query.
+- Added a performance reporting service.

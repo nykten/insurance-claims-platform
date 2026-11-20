@@ -31,3 +31,18 @@ Discussed with AI tools to plan out system architecture and project structure af
 - **Challenged / overrode:** None
 - **Why:** All test validated and infrastructure now runs
 - **Commit:** Committed all new changes.
+
+### 2026-11-20 23:57 Milestone 3 Implementation
+- **Asked:** Implement Milestone 3 - Identity, Security, Assignment & Reporting
+- **AI proposed:** Various additions and implementation
+- **Challenged / overrode:** Tests were not running correctly
+- **Why:** Missing import and wrong dependencies
+- **Commit:** Not committed
+
+### 00:10 Milestone 3 Test Success
+- **Asked:** Verification for Milestone 3 changes and successful test run.
+- **AI proposed:** Added identity application-layer separation through `AuthService`, corrected the controller-to-repository architecture violation, and confirmed all 3 backend tests passed with 0 failures and 0 errors.
+- **Accepted:** new changes to the AuthService
+- **Challenged / overrode:** Ran verification tests
+- **Why:** Ensure verification passes
+- **Commit:** All changes committed

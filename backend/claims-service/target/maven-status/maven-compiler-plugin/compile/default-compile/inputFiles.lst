@@ -1,3 +1,5 @@
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\assignment\api\QueueController.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\assignment\application\AssignmentService.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\claim\api\ClaimantClaimController.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\claim\api\dto\SubmitClaimRequest.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\claim\api\OfficerClaimController.java
@@ -17,8 +19,21 @@ C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\clai
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\common\error\IllegalTransitionException.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\common\error\ResourceNotFoundException.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\common\web\PageResponse.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\api\AuthController.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\application\AuthService.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\domain\Role.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\domain\User.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\infra\UserRepository.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\CurrentUser.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\JwtAuthenticationFilter.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\JwtService.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\SecurityConfig.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\ClaimType.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\Market.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\Policy.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\PolicyRepository.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\PolicyValidator.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\reporting\api\DashboardController.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\reporting\application\DashboardService.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\reporting\application\PerformanceService.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\reporting\infra\ReportingRepository.java
