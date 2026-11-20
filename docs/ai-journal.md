@@ -54,3 +54,18 @@ Discussed with AI tools to plan out system architecture and project structure af
 - **Challenged / overrode:** Challenged the duplication problem of the same class but it turns out to be a stale directory map detected by intelliJ
 - **Why:** Verify everything works
 - **Commit:** Accepted all commits after tests passed
+
+### 2026-11-22 02:10 Milestone 5 Frontend building and spinning up docker
+- **Asked:** Implement the progress sections of Milestone 5 and to build the frontend services. Verify with tests and docker builds
+- **AI proposed:** Created the frontend and docker build instructions.
+- **Accepted:** -
+- **Challenged / overrode:** There is a persistent bug that returns Error 403 Forbidden upon trying to sign in and we couldnt exactly find out why despite multiple tests.
+- **Personal reflection:** At this point I think the project has an issue with scope creep with how complex it is and I am beginning to lose my view and grip of the codebase. The fact that I couldnt debug the 403 error tells a lot, I shouldve given simpler deliverables and smaller scope so that a lot of additionals parts are not added for this assessment.
+
+### 2026-11-22 03:28 Milestone 6 Build validation and smoke tests
+- **Asked:** Proceed with the next steps and validate the docker build by running tests for the whole claims process and user roles.
+- **AI proposed:** Fix previous bugs and rebuild docker image.
+- **Accepted:** Accepted fixes and allowed smoke tests
+- **Challenged / overrode:** Insisted on fixing the authentication bug and fixing routes in the frontend side.
+- **Why:** Without the auth passing, the latter modules and pages could not be properly tested
+- **Commit:** After all tests are verified and completed, commits are accepted

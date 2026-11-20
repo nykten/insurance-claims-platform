@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.chx.claims.claim.domain.ClaimStatusTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.chx.claims.claim.domain.ClaimStatusTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in com.chx.claims.claim.domain.ClaimStatusTest

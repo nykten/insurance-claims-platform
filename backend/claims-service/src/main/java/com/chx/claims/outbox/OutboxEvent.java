@@ -1,6 +1,8 @@
 package com.chx.claims.outbox;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -10,7 +12,7 @@ public class OutboxEvent {
     private String aggregateType;
     private UUID aggregateId;
     private String eventType;
-    @Column(columnDefinition = "jsonb") private String payload;
+    @JdbcTypeCode(SqlTypes.JSON) @Column(columnDefinition = "jsonb") private String payload;
     private String status;
     private Instant createdAt;
     private Instant publishedAt;
