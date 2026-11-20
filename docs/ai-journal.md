@@ -69,3 +69,12 @@ Discussed with AI tools to plan out system architecture and project structure af
 - **Challenged / overrode:** Insisted on fixing the authentication bug and fixing routes in the frontend side.
 - **Why:** Without the auth passing, the latter modules and pages could not be properly tested
 - **Commit:** After all tests are verified and completed, commits are accepted
+
+### 2026-11-22 03:42 Milestone 7 Documentation
+- **Asked:** Plan out the documentation including how to set up, architecture of the system and provide demo scripts
+- **AI proposed:** Provided all the above.
+- **Accepted:** All except the README
+- **Challenged / overrode:** Asked for additional detail for setup instructions from cloning to running the app.
+- **Why:** Provideds more clarity on how to set up the project.
+- **Commit:** All changes are committed after review.
+- **Personal Reflection:** I'm glad that I'm able to complete this despite the hiccups and underprepared software setups before I started. I learnt first-hand how to run Docker and inspecting their error traces. By the end of this asssessment, I understand how important to plan out what's important and keeping the scope minimal when working with AI.
