@@ -7,7 +7,7 @@ The journal records the human's judgement. Do not invent decisions.
 
 Produce a skeleton the user will complete, and do NOT write it into the file yourself:
 
-### <time> <short title>
+### <date> <time in HH:MM (24 hour format)> <short title>
 - **Asked:** <what the user prompted, one line>
 - **AI proposed:** <summary of what you produced, factual>
 - **Accepted:** [user fills in]

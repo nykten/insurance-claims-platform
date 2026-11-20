@@ -1,0 +1,3 @@
+package com.chx.claims.claim.application;
+import com.chx.claims.claim.domain.Claim; import com.chx.claims.claim.infra.ClaimRepository; import com.chx.claims.common.error.ResourceNotFoundException; import java.util.*; import org.springframework.stereotype.Service;
+@Service public class ClaimQueryService { private final ClaimRepository repo; public ClaimQueryService(ClaimRepository r){repo=r;} public List<Claim> mine(UUID claimant){return repo.findByClaimantId(claimant);} public Claim get(UUID id,UUID caller){Claim c=repo.findById(id).orElseThrow(()->new ResourceNotFoundException("Claim not found")); if(!c.getClaimantId().equals(caller))throw new ResourceNotFoundException("Claim not found"); return c;} }
