@@ -1,10 +1,32 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal, Injectable } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideRouter, CanActivateFn } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
-@Component({
-  selector: 'app-root',
-  template: '<main><h1>CHX Claims Platform</h1><p>Frontend workspace is ready.</p></main>'
-})
-class AppComponent {}
+type Role = 'CLAIMANT' | 'CLAIMS_OFFICER' | 'CLAIMS_MANAGER';
+type User = { id: string; email: string; fullName: string; role: Role };
+type Claim = { id: string; claimNumber: string; status: string; claimType?: string; market?: string };
 
-bootstrapApplication(AppComponent).catch((error: unknown) => console.error(error));
+@Injectable({providedIn:'root'})
+class AuthService {
+  private http = inject(HttpClient);
+  readonly token = signal(localStorage.getItem('chx_token'));
+  readonly user = signal<User | null>(JSON.parse(localStorage.getItem('chx_user') ?? 'null'));
+  readonly authenticated = computed(() => !!this.token());
+  async login(email: string, password: string) { const result = await firstValueFrom(this.http.post<{token:string;user:User}>('/api/auth/login',{email,password})); this.token.set(result.token); this.user.set(result.user); localStorage.setItem('chx_token',result.token); localStorage.setItem('chx_user',JSON.stringify(result.user)); }
+  logout(){this.token.set(null);this.user.set(null);localStorage.clear();location.href='/login';}
+}
+const authGuard: CanActivateFn = () => inject(AuthService).authenticated();
+
+@Component({selector:'app-login',imports:[FormsModule],template:`<section class="login card"><p class="eyebrow">CHX Insurance APAC</p><h1>Claims workspace</h1><p>Sign in to report, assess, and track claims.</p><form (ngSubmit)="submit()"><label>Email<input name="email" [(ngModel)]="email" type="email" required></label><label>Password<input name="password" [(ngModel)]="password" type="password" required></label><button class="primary" type="submit">Sign in</button></form><div class="demo"><span>Demo users</span><button type="button" (click)="fill('alice@example.com')">Alice</button><button type="button" (click)="fill('officer1@chx.com')">Officer</button><button type="button" (click)="fill('manager@chx.com')">Manager</button></div><p class="error" *ngIf="error">{{error}}</p></section>`})
+class LoginComponent { email='alice@example.com'; password='Password123!'; error=''; private auth=inject(AuthService); async submit(){try{await this.auth.login(this.email,this.password);location.href='/'}catch{this.error='Unable to sign in. Check the API and credentials.'}} fill(email:string){this.email=email;this.password='Password123!';} }
+
+@Component({selector:'app-shell',imports:[FormsModule],template:`<div class="shell"><header><div><p class="eyebrow">CHX CLAIMS</p><h1>Claims workspace</h1></div><div class="identity"><span>{{auth.user()?.fullName}}</span><span class="badge">{{auth.user()?.role}}</span><button (click)="auth.logout()">Log out</button></div></header><nav><a href="#" (click)="view='claims';$event.preventDefault()">My claims</a><a href="#" (click)="view='new';$event.preventDefault()">New claim</a><a href="#" *ngIf="staff()" (click)="view='queue';$event.preventDefault()">Officer queue</a><a href="#" *ngIf="manager()" (click)="view='dashboard';$event.preventDefault()">Dashboard</a></nav><main><section *ngIf="view==='claims'"><div class="section-title"><div><p class="eyebrow">OVERVIEW</p><h2>My claims</h2></div><button class="primary" (click)="view='new'">Report a claim</button></div><div *ngIf="claims().length; else empty"><article class="claim-row" *ngFor="let claim of claims()"><div><strong>{{claim.claimNumber}}</strong><span>{{claim.claimType || 'Claim'}} · {{claim.market || 'APAC'}}</span></div><span class="status" [class.action]="claim.status==='INFO_REQUESTED'">{{claim.status}}</span></article></div><ng-template #empty><div class="empty card">No claims found.</div></ng-template></section><section *ngIf="view==='new'"><p class="eyebrow">CLAIMANT</p><h2>Report a new claim</h2><form class="card form-grid" (ngSubmit)="submitClaim()"><label>Policy ID<input name="policy" [(ngModel)]="form.policyId" required></label><label>Claim type<select name="type" [(ngModel)]="form.claimType"><option>MOTOR</option><option>PROPERTY</option></select></label><label>Market<select name="market" [(ngModel)]="form.market"><option>SG</option><option>MY</option><option>HK</option></select></label><label>Incident date<input name="date" type="date" [(ngModel)]="form.incidentDate" required></label><label class="wide">Description<textarea name="description" [(ngModel)]="form.description" required></textarea></label><label>Claimed amount<input name="amount" type="number" min="1" [(ngModel)]="form.claimedAmount" required></label><button class="primary" type="submit">Submit claim</button></form><p class="success" *ngIf="message">{{message}}</p></section><section *ngIf="view==='queue'"><p class="eyebrow">OPERATIONS</p><h2>Officer queue</h2><div class="card"><p>Submitted claims awaiting pickup.</p><button class="primary" (click)="loadClaims('/api/officer/queue')">Refresh queue</button></div><article class="claim-row" *ngFor="let claim of claims()"><strong>{{claim.claimNumber}}</strong><span class="status">{{claim.status}}</span></article></section><section *ngIf="view==='dashboard'"><p class="eyebrow">MANAGEMENT</p><h2>Operational dashboard</h2><div class="metrics"><div class="metric card"><span>Open claims</span><strong>{{claims().length}}</strong></div><div class="metric card"><span>Role</span><strong>{{auth.user()?.role}}</strong></div></div></section></main></div>`})
+class ShellComponent { auth=inject(AuthService); http=inject(HttpClient); view='claims'; claims=signal<Claim[]>([]); message=''; form={policyId:'',claimType:'MOTOR',market:'SG',incidentDate:'',description:'',claimedAmount:0}; staff=computed(()=>this.auth.user()?.role==='CLAIMS_OFFICER'||this.auth.user()?.role==='CLAIMS_MANAGER'); manager=computed(()=>this.auth.user()?.role==='CLAIMS_MANAGER'); constructor(){this.loadClaims('/api/claims')} async loadClaims(url:string){try{this.claims.set(await firstValueFrom(this.http.get<Claim[]>(url)))}catch{this.claims.set([])}} async submitClaim(){try{await firstValueFrom(this.http.post('/api/claims',this.form));this.message='Claim submitted successfully.';this.view='claims';await this.loadClaims('/api/claims')}catch{this.message='Claim could not be submitted. Check the policy details.'}} }
+
+@Component({selector:'app-root',imports:[LoginComponent,ShellComponent],template:`@if (auth.authenticated()) { <app-shell></app-shell> } @else { <app-login></app-login> }`})
+class AppComponent { auth=inject(AuthService); }
+
+bootstrapApplication(AppComponent,{providers:[provideHttpClient(withInterceptors([(req,next)=>{const auth=inject(AuthService);const token=auth.token();const user=auth.user();return next(token?req.clone({setHeaders:{Authorization:`Bearer ${token}`,'X-User-Id':user?.id??''}}):req)}])),provideRouter([{path:'login',canActivate:[authGuard],component:LoginComponent}])]}).catch((error: unknown) => console.error(error));

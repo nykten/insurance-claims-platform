@@ -1,0 +1,7 @@
+import { Component, input, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Claim } from '../../api/claims.models';
+import { StatusTimelineComponent } from '../../shared/ui/status-timeline.component';
+
+@Component({selector:'app-claim-review',standalone:true,imports:[FormsModule,StatusTimelineComponent],template:`<article class="card"><p class="eyebrow">CLAIM REVIEW</p><h2>{{claim()?.claimNumber || 'Select a claim'}}</h2>@if (claim(); as item) {<div class="detail-grid"><span>Status<strong>{{item.status}}</strong></span><span>Type<strong>{{item.claimType}}</strong></span><span>Market<strong>{{item.market}}</strong></span><span>Amount<strong>{{item.claimedAmount}}</strong></span></div><app-status-timeline [events]="item.statusHistory ?? []"></app-status-timeline><div class="actions"><button (click)="action='info'">Request information</button><button (click)="action='reserve'">Set reserve</button><button class="primary" (click)="action='approve'">Approve</button><button class="danger" (click)="action='reject'">Reject</button></div>}@if (action()) {<div class="dialog"><h3>{{action() | titlecase}}</h3><textarea [(ngModel)]="note" placeholder="Add a note"></textarea><button class="primary" (click)="complete()">Confirm</button><button (click)="action.set('')">Cancel</button></div>}`})
+export class ClaimReviewComponent { claim=input<Claim|null>(null); action=signal(''); note=''; complete(){this.action.set('');this.note='';} }

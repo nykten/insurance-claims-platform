@@ -1,0 +1,7 @@
+import { Component, inject, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ClaimsApiService } from '../../api/claims-api.service';
+import { Claim } from '../../api/claims.models';
+
+@Component({selector:'app-queue',standalone:true,imports:[FormsModule],template:`<section><div class="section-title"><div><p class="eyebrow">OPERATIONS</p><h2>Claims queue</h2></div><button class="primary" (click)="refresh()">Refresh</button></div><div class="filters card"><label>Market<select [(ngModel)]="market"><option value="">All markets</option><option>SG</option><option>MY</option><option>HK</option></select></label><label>Claim type<select [(ngModel)]="type"><option value="">All types</option><option>MOTOR</option><option>PROPERTY</option></select></label></div><p class="error" *ngIf="error">{{error}}</p><article class="claim-row" *ngFor="let claim of claims()"><div><strong>{{claim.claimNumber}}</strong><span>{{claim.claimType}} · {{claim.market}}</span></div><div><span class="status">{{claim.status}}</span><button (click)="pickUp(claim)">Pick up</button></div></article></section>`})
+export class QueueComponent { private api=inject(ClaimsApiService); claims=signal<Claim[]>([]); market=''; type=''; error=''; constructor(){this.refresh()} refresh(){this.api.queue().subscribe({next:v=>this.claims.set(v),error:()=>this.error='Unable to load the queue.'})} pickUp(claim:Claim){this.error=''; this.error='Claim pickup is ready for the officer action endpoint.';} }

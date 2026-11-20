@@ -1,0 +1,1 @@
+export interface Claim { id:string; claimNumber:string; status:string; claimType?:string; market?:string; claimedAmount?:number; description?:string; statusHistory?: {fromStatus?:string;toStatus:string;changedAt?:string;note?:string}[]; }
