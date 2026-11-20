@@ -1,0 +1,1 @@
+{"name":"chx-claims-frontend","version":"0.0.1","private":true,"scripts":{"build":"ng build","test":"ng test --watch=false"}}

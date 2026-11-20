@@ -1,0 +1,1 @@
+CREATE TABLE outbox_events (id UUID PRIMARY KEY, aggregate_type VARCHAR(64) NOT NULL, aggregate_id UUID NOT NULL, event_type VARCHAR(64) NOT NULL, payload JSONB NOT NULL, status VARCHAR(16) NOT NULL CHECK (status IN ('PENDING','PUBLISHED')), created_at TIMESTAMPTZ NOT NULL DEFAULT now(), published_at TIMESTAMPTZ);

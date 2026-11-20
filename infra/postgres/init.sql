@@ -1,0 +1,2 @@
+CREATE DATABASE claims;
+CREATE DATABASE notifications;
