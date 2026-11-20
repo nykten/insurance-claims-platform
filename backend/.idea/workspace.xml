@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e50abe77-600b-469b-9bc8-9c232346e61c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/insurance-claims-platform.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/src/main/java/com/chx/claims/claim/application/ClaimCommandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/src/main/java/com/chx/claims/claim/application/ClaimCommandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/src/main/java/com/chx/claims/claim/domain/Claim.java" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/src/main/java/com/chx/claims/claim/domain/Claim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/target/surefire-reports/TEST-com.chx.claims.ArchitectureTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/target/surefire-reports/TEST-com.chx.claims.ArchitectureTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/target/surefire-reports/TEST-com.chx.claims.claim.domain.ClaimStatusTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/target/surefire-reports/TEST-com.chx.claims.claim.domain.ClaimStatusTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/claims-service/target/surefire-reports/com.chx.claims.ArchitectureTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/claims-service/target/surefire-reports/com.chx.claims.ArchitectureTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3MNZxNOBBM1kliygyQ6LZ6s2IPH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/neeha season 2/Documents/kodeing/insurance-claims-platform/backend/pom.xml",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.ClaimsServiceApplication">
+    <configuration name="ClaimsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="claims-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chx.claims.ClaimsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.chx.notification.NotificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e50abe77-600b-469b-9bc8-9c232346e61c" name="Changes" comment="" />
+      <created>1795193233200</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1795193233200</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

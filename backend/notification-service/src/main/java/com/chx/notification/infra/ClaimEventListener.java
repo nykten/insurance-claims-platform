@@ -1,0 +1,3 @@
+package com.chx.notification.infra;
+import com.chx.notification.api.EventEnvelope; import com.chx.notification.application.NotificationService; import com.fasterxml.jackson.databind.ObjectMapper; import org.springframework.kafka.annotation.KafkaListener; import org.springframework.stereotype.Component;
+@Component public class ClaimEventListener { private final ObjectMapper mapper; private final NotificationService service; public ClaimEventListener(ObjectMapper m,NotificationService s){mapper=m;service=s;} @KafkaListener(topics="claim-events") public void onMessage(String json)throws Exception{service.handle(mapper.readValue(json,EventEnvelope.class));} }

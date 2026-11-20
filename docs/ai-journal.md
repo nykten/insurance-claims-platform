@@ -46,3 +46,11 @@ Discussed with AI tools to plan out system architecture and project structure af
 - **Challenged / overrode:** Ran verification tests
 - **Why:** Ensure verification passes
 - **Commit:** All changes committed
+
+### 2026-11-21 00:00 Milestone 4 outbox and notifications
+- **Asked:** Implement the progress sections of Milestone 4, covering the transactional outbox, claim lifecycle events, notification-service, idempotency, email handling, tests, and event documentation.
+- **AI proposed:** Added and wired the claims-service outbox, Kafka event publishing, notification-service consumer, tolerant event handling, duplicate-event protection, email audit persistence, JSONB mapping, unit tests, and `docs/events.md`. The user subsequently confirmed all tests passed.
+- **Accepted:** Accepted implementation of services after verification tests passed
+- **Challenged / overrode:** Challenged the duplication problem of the same class but it turns out to be a stale directory map detected by intelliJ
+- **Why:** Verify everything works
+- **Commit:** Accepted all commits after tests passed

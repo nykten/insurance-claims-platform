@@ -28,6 +28,13 @@ C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\clai
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\JwtAuthenticationFilter.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\JwtService.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\identity\security\SecurityConfig.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\events\ClaimEventPayload.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\events\EventEnvelope.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\OutboxConfig.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\OutboxEvent.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\OutboxPublisher.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\OutboxRecorder.java
+C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\outbox\OutboxRepository.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\ClaimType.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\Market.java
 C:\Users\neeha season 2\Documents\kodeing\insurance-claims-platform\backend\claims-service\src\main\java\com\chx\claims\policy\Policy.java
